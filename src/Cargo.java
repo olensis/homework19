@@ -32,6 +32,11 @@ public class Cargo extends Car implements Competing, ICanDrive{
     }
 
     @Override
+    public void printType() {
+
+    }
+
+    @Override
     public void pitStop() {
         System.out.println(" Пит-Стоп 1 минуту");
 

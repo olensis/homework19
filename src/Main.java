@@ -1,16 +1,16 @@
 public class Main {
     public static void main(String[] args) {
         // Автобусы
-//        Bus mersedes= new Bus ("Мерседес", " 151", 4);
-//        Bus lada = new Bus("Лада", "112", 3);
-//        Bus audi = new Bus("Ауди", " АР22", 5);
-        Bus kia= new Bus("Киа", " А5", 3);
+        Bus mersedes= new Bus ("Мерседес", " 151", 4, Capacity.AVERAGE);
+        Bus lada = new Bus("Лада", "112", 3, Capacity.BIG);
+        Bus audi = new Bus("Ауди", " АР22", 5, Capacity.SMALL);
+        Bus kia= new Bus("Киа", " А5", 3, Capacity.VERY_BIG);
 //        kia.printInfo();
 //        mersedes.printInfo();
 //        lada.printInfo();
 //        audi.printInfo();
-        kia.ESPECIALLY_SMALL();
-        kia.printInfo();
+ //       kia.ESPECIALLY_SMALL();
+        kia.printType();
 
 
         //Легковые
@@ -41,8 +41,8 @@ public class Main {
 //        Driver<PassengerCars>Ivan = new Driver<PassengerCars>(" Иванов Иван Иванович", "да", 10);
 //        Ivan.driveB(bmw);
 //
-//        Driver<Bus> kolia = new Driver<>("Николаев Николай Николевич", "да", 7);
-//        kolia.driveD(mersedes);
+       Driver<Bus> kolia = new Driver<>("Николаев Николай Николевич", "да", 7);
+       kolia.driveD(mersedes);
 //
 //
  }

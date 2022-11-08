@@ -7,7 +7,6 @@ public abstract class Car {
     public static final String  CATEGORI_С = "Категория С";
     public static final String  CATEGORI_D = "Категория D";
 
-
     public Car(String brand, String model, double engineCapacity) {
         Brand = brand;
         Model = model;
@@ -38,4 +37,6 @@ public abstract class Car {
     protected void printInfo(){
         System.out.println(" Модель " + getModel() + " Бренд " + getBrand() + " Объем двигетеля" + engineCapacity);
     }
+    public abstract void printType();
+
 }
