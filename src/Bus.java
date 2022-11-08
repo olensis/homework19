@@ -6,10 +6,12 @@ public class Bus extends Car implements Competing, ICanDrive{
         AVERAGE("средняя", " от 40 до 50 мест"),
         BIG("большая ", " от 60 до 80 мест"),
         VERY_BIG("особо большая ", " от 100 до 120 мест");
+
         private String Capacity;
      private String Capacity1;
 
         public static Bus.Capacity ESPECIALLY_SMALL() {
+
             return ESPECIALLY_SMALL;
         }
 
@@ -35,11 +37,16 @@ public class Bus extends Car implements Competing, ICanDrive{
     public Bus(String brand, String model, double engineCapacity) {
         super(brand, model, engineCapacity);
     }
+    public  void printInfo(){
+        for (Capacity cap: Capacity.values())
+            System.out.println(cap+ " Грузоподъемность " + cap.getCapacity()+ cap.getCapacity1());
+    }
+
+
 
     @Override
     protected void beginMovement() {
         System.out.println( " Я начинаю движение");
-
 
     }
     public void ESPECIALLY_SMALL(){
@@ -50,7 +57,6 @@ public class Bus extends Car implements Competing, ICanDrive{
     protected void completeMovement() {
         System.out.println(" Я заканчиваю движение");
     }
-
     @Override
     public void pitStop() {
         System.out.println(" Пит-Стоп 3 минуты");
@@ -62,7 +68,6 @@ public class Bus extends Car implements Competing, ICanDrive{
         System.out.println(" Лучший круг за 6 минут");
 
     }
-
     @Override
     public void maximumSpeed() {
         System.out.println(" Лучшая скорость 180 км в час");
@@ -88,9 +93,9 @@ public class Bus extends Car implements Competing, ICanDrive{
 
 
         }
-        switch ( ){
-            case Bus.Capacity.ESPECIALLY_SMALL:
-        }
+//        switch ( ){
+//            case Bus.Capacity.ESPECIALLY_SMALL:
+//        }
 
     }
 }
