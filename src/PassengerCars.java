@@ -40,6 +40,11 @@ public class PassengerCars extends Car implements Competing, ICanDrive {
 
     }
 
+    @Override
+    public void printType() {
+
+    }
+
 
     @Override
     public void pitStop() {

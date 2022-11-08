@@ -1,62 +1,39 @@
 public class Bus extends Car implements Competing, ICanDrive{
+    private Capacity сapacity;
 
-    public enum Capacity{
-        ESPECIALLY_SMALL("особо малая ", "до 10 мест" ),
-        SMALL("малая ", "до 25 мест"),
-        AVERAGE("средняя", " от 40 до 50 мест"),
-        BIG("большая ", " от 60 до 80 мест"),
-        VERY_BIG("особо большая ", " от 100 до 120 мест");
-
-        private String Capacity;
-     private String Capacity1;
-
-        public static Bus.Capacity ESPECIALLY_SMALL() {
-
-            return ESPECIALLY_SMALL;
-        }
-
-        public String getCapacity1() {
-            return Capacity1;
-        }
-        public void setCapacity1(String capacity1) {
-          Capacity1 = capacity1;
-       }
-
-
-        Capacity(String capacity, String capacity1) {
-
-            Capacity = capacity;
-            Capacity1 =capacity1;
-        }
-
-        public String getCapacity() {
-            return Capacity;
-        }
-
-    }
-    public Bus(String brand, String model, double engineCapacity) {
+    public Bus(String brand, String model, double engineCapacity, Capacity сapacity) {
         super(brand, model, engineCapacity);
+        this.сapacity = сapacity;
     }
-    public  void printInfo(){
-        for (Capacity cap: Capacity.values())
-            System.out.println(cap+ " Грузоподъемность " + cap.getCapacity()+ cap.getCapacity1());
+    public Capacity getСapacity() {
+        return сapacity;
     }
 
-
+    public void setСapacity(Capacity сapacity) {
+        this.сapacity = сapacity;
+    }
 
     @Override
     protected void beginMovement() {
         System.out.println( " Я начинаю движение");
 
     }
-    public void ESPECIALLY_SMALL(){
-        System.out.println(" Грузоподъемность " + Capacity.ESPECIALLY_SMALL());
-    }
 
     @Override
     protected void completeMovement() {
         System.out.println(" Я заканчиваю движение");
     }
+
+    @Override
+    public void printType() {
+        if (сapacity == null){
+            System.out.println("Данных по авто недостаточно");
+        }else {
+            System.out.println("Вместимость от " + сapacity.getFrom() + "  до " + сapacity.getTo());
+        }
+
+    }
+
     @Override
     public void pitStop() {
         System.out.println(" Пит-Стоп 3 минуты");
@@ -84,18 +61,6 @@ public class Bus extends Car implements Competing, ICanDrive{
 
     }
     public void driver(String categori) {
-
-    }
-    public void Capacity(String Capacity,String Capacity1){
-
-        System.out.println("Грузоподъемность " + Capacity + " весом " + Capacity1 + " тонн" );
-        if (Capacity == null & Capacity1 == null){
-
-
-        }
-//        switch ( ){
-//            case Bus.Capacity.ESPECIALLY_SMALL:
-//        }
 
     }
 }
