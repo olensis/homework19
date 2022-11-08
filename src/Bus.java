@@ -42,6 +42,8 @@ public class Bus extends Car implements Competing, ICanDrive{
             System.out.println(cap+ " Грузоподъемность " + cap.getCapacity()+ cap.getCapacity1());
     }
 
+
+
     @Override
     protected void beginMovement() {
         System.out.println( " Я начинаю движение");
